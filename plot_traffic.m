@@ -11,7 +11,7 @@ trans_maty = [1 w/2  l/2;...
               1 -w/2 -l/2;...
               1 w/2 -l/2];                     % transformation matrix for obtaining car's vertices(y-component) from (x,y,ori) form present in cars matrix
 
-[dummy, noOfCars] = size(cars);                % ignore the dummy
+[~, noOfCars] = size(cars);                % number of cars in the traffic
 
 for i=1:noOfCars                                 % run this loop for all cars under consideration
         

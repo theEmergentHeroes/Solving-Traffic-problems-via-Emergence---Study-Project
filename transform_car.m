@@ -1,17 +1,10 @@
-function [car] = transform_car(car,rotation,translation )
+% this function takes in a single car object and rotates it
+function [car] = transform_car(car,translation, rotation)
 
-car_x = car(1);                    % x-coordinate of centre point of car
-car_y = car(2);                    % y-coordinate of centre point of car 
-car_ori = car(3);                  % orientation of car
+car.xcord = car.xcord + translation*cosd(car.theta);           % translate car
+car.ycord = car.ycord + translation*sind(car.theta);
 
-car_x = car_x + translation*cosd(car_ori);           % translate car
-car_y = car_y + translation*sind(car_ori);
-
-car_ori = car_ori + rotation;                        % add rotation to car's current orientation
-if(car_ori >= 360)
-    car_ori = 360-car_ori;                          % the orientation must be kept between 0 and 360 degrees
-end
-car = [car_x car_y car_ori];                    % return altered values to car
+car.theta = car.theta + rotation;                        % add rotation to car's current orientation
+car.theta = mod(car.theta,360);                     % takes the remainder of orientation when divided by 360
 
 end
-

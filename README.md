@@ -12,3 +12,7 @@
 * Stigmergy
 * self organization
 * school of fish, flock of birds
+
+###REFERENCES
+* [Using GA to train Neural Networks] (http://www.ijcai.org/Proceedings/89-1/Papers/122.pdf)
+

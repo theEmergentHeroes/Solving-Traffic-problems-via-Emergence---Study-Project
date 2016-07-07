@@ -12,9 +12,12 @@
 * Stigmergy
 * self organization
 * school of fish, flock of birds
+* GANN's
+  1. mutate nodes > biased mutate weights > unbiased mutate weights [1]
+  2. rank based vs fitness based selection
 
 ###REFERENCES
-* [Using GA to train Neural Networks] (http://www.ijcai.org/Proceedings/89-1/Papers/122.pdf)
-* [Different encoding strategies for GANN's] (http://homepages.inf.ed.ac.uk/pkoehn/publications/encoding96.pdf)
-* [Combining GA and NN (thesis work)] (http://homepages.inf.ed.ac.uk/pkoehn/publications/gann94.pdf)
+1. [Using GA to train Neural Networks] (http://www.ijcai.org/Proceedings/89-1/Papers/122.pdf)
+2. [Different encoding strategies for GANN's] (http://homepages.inf.ed.ac.uk/pkoehn/publications/encoding96.pdf)
+3. [Combining GA and NN (thesis work)] (http://homepages.inf.ed.ac.uk/pkoehn/publications/gann94.pdf)
 

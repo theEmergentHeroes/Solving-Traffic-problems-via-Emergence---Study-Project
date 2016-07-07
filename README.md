@@ -15,4 +15,6 @@
 
 ###REFERENCES
 * [Using GA to train Neural Networks] (http://www.ijcai.org/Proceedings/89-1/Papers/122.pdf)
+* [Different encoding strategies for GANN's] (http://homepages.inf.ed.ac.uk/pkoehn/publications/encoding96.pdf)
+* [Combining GA and NN (thesis work)] (http://homepages.inf.ed.ac.uk/pkoehn/publications/gann94.pdf)
 

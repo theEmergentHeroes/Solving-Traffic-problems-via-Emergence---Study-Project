@@ -1,7 +1,6 @@
-function [  ] = plot_traffic( cars )
+function [  ] = plot_traffic( cars,car_status, roads, map_size )
 l = 2;                 % length of car
 w = 1;                  % width of car
-k = 45;                 % Alter this to vary the magnification of traffic area
 trans_matx = [1 l/2 -w/2;...
               1 l/2  w/2;...                    % transformation matrix for obtaining car's vertices(x-component) from (x,y,ori) form present in cars matrix
               1 -l/2 w/2;...
@@ -25,11 +24,33 @@ for i=1:noOfCars                                 % run this loop for all cars un
 %%
 %%    %checking for 90 degree angle using dot-product
 %     (y1-y2)*(y3-y2)+(x1-x2)*(x3-x2)
-%%
-fill([x1;x2;x3;x4],[y1;y2;y3;y4],'b');                                  % Fill blue colour in the rectangle associated with vertex vectors obtained
-   hold on;
-   
+%%Following code fills colour in cars depending upon the status of that car
+%currently a car has two status one indicating that the particular car has
+%met with an accident (Red colour) while other for no such case
+
+if(car_status(i) == 0)
+fill([x1;x2;x3;x4],[y1;y2;y3;y4],'y');                                  % Fill blue colour in the rectangle associated with vertex vectors obtained
+hold on;
+fill([x1;x2;cars(i).xcord],[y1;y2;cars(i).ycord],'b');
+else
+fill([x1;x2;x3;x4],[y1;y2;y3;y4],'r');
 end
-   axis([0 k 0 k]);                                                  % Alter this to magnify the traffic area
+plot(cars(i).xcord,cars(i).ycord,'*k');
+plot(roads(:,[1 3])',roads(:,[2 4])','k','LineWidth',3);   % plot the roads marked by user
+%% Following code displays the buttons used for analyze function
+fill([0;0;5;5],[map_size;map_size-5;map_size-5;map_size],'y');
+fill([5;5;10;10],[map_size;map_size-5;map_size-5;map_size],'y');
+fill([0;0;5;5],[map_size-5;map_size-10;map_size-10;map_size-5],'y');
+fill([5;5;10;10],[map_size-5;map_size-10;map_size-10;map_size-5],'y');
+txt1 = 'stop';
+txt2 = 'play';
+txt3 = 'back';
+txt4 = 'forward';
+text(0,map_size-3,txt1);
+text(5,map_size-3,txt2);
+text(0,map_size-7,txt3);
+text(5,map_size-7,txt4);
+end
+   axis([0 map_size 0 map_size]);                                                  % Alter this to magnify the traffic area
    hold off;
 end

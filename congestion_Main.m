@@ -11,23 +11,21 @@
 % inverse square nature while that of attracting forces will be a constant
 
 clear
+close all;
 clc
+carObject;
 noOfCars = 25;                           % Number of cars
 map_size = 50;                          % size of map for simulating cars
 num_trans = 100;                         % Max number of transformations in the simulation
-cars_cell = cell(1,noOfCars);            % initializing cars_cell cell for storing transformations
+transformation_cell = cell(1,noOfCars);            % initializing transformations_cell cell for storing transformations
 visiblity_range = 4;                     % visiblity range of a car to see other cars
-Q = 30;
+Q = 10;
 %% Initialization of traffic, for furthere details check function initialize_traffic.m
 [ cars, roads ] = initialize_traffic( noOfCars, map_size );
-%   cars(1).xcord = 20;
-%   cars(1).ycord = 20;
-%   cars(1).theta = 20;
-%   roads = [0 0 0 0];
 cars0 = cars;
 for k=1:num_trans
     for i=1:noOfCars
-    cars(i).visible_cars = [];
+    cars(i).visible_cars = [];                % reset the cars visible to each car
     end
 %% The following code calculates all the cars which are in visible range of any given car.
 for i=1:noOfCars
@@ -59,12 +57,12 @@ for i=1:noOfCars
     if(noOfvisibleCars < 3);
     Fy = Fy + 2;
     end
-    [cars_cell{i}(k,1),cars_cell{i}(k,2)] = force2motion(cars(i), Fx, Fy);
+    [transformation_cell{i}(k,1),transformation_cell{i}(k,2)] = force2motion(cars(i), Fx, Fy);
 
 end
  for i=1:noOfCars
-        cars(i) = transform_car(cars(i),cars_cell{i}(k,1),cars_cell{i}(k,2));
+        cars(i) = transform_car(cars(i),transformation_cell{i}(k,1),transformation_cell{i}(k,2)); % Apply requierd transformations on each car
       % cars = animate_traffic( cars_cell, cars, roads,  map_size);
  end
 end
-cars = animate_traffic( cars_cell, cars0, roads,  map_size);
+cars = animate_traffic( transformation_cell, cars0, roads,  map_size);

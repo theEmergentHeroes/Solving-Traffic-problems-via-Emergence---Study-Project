@@ -1,15 +1,14 @@
-clear
-clc
-noOfCars = 1;                           % Number of cars
-map_size = 100;
-num_trans = 100;
-cars_cell = cell(1,noOfCars);
+carObject;
 
-[ cars, roads ] = initialize_traffic( noOfCars, map_size );
+car1 = carObject;
+car2 = carObject;
 
-for i=1:noOfCars
-    for j = 1:num_trans
-    cars_cell{i}(j,:) = [randi([0 5]) randi([0 60])];
-    end
-end
-cars = animate_traffic( cars_cell, cars, roads,  map_size);
+car1.xcord = 5;
+car1.ycord = 0;
+car1.theta = 90;
+
+car2.xcord = 7;
+car2.ycord = 0;
+car2.theta = 0;
+
+check_collision( car1,car2 )

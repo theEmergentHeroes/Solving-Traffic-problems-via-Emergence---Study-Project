@@ -17,7 +17,8 @@ roads_outer(2,3) = roads_outer(2,3)+2;
 % hold on;
 %% initialize cars 
 [num_roads,~] = size(roads);                                 % number of distinct roads used in the simulation
-cars = struct('xcord',0,'ycord',0,'theta',0,'visible_cars',[]);                % initialization for the structure car
+cars(noOfCars) = carObject;                                 % initialization for the array of Objects car for noOfCars  
+% cars = struct('xcord',0,'ycord',0,'theta',0,'visible_cars',[]);                
 j=1;
 for i=1:num_roads
     xv(j) = roads(i,1);yv(j) = roads(i,2);                   % vector containing the x,y-coordinates of line segment points

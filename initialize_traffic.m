@@ -7,7 +7,8 @@ function [ cars, roads_outer ] = initialize_traffic( noOfCars, map_size )
 
 % roads = plan_roads(map_size);
 width = 10;             % width of roads
-roads = [map_size/4 map_size/4 map_size/4 map_size*.75; map_size/4+width map_size*.75 map_size/4+width map_size/4];
+% roads = [map_size/4 map_size/4 map_size/4 map_size*.75; map_size/4+width map_size*.75 map_size/4+width map_size/4];
+roads = [map_size/4 0 map_size/4 map_size; map_size/4+width 0 map_size/4+width map_size];
 roads_outer = roads;
 roads_outer(1,1) = roads_outer(1,1)-2;
 roads_outer(1,3) = roads_outer(1,3)-2;

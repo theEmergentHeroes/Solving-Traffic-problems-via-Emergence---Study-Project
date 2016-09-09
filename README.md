@@ -3,6 +3,7 @@
 > Inspired by Complex Adaptive Systems in nature, We are trying to solve the problems of traffic via the phenomena of emergence.
 > Nature has developed efficient and robust systems which are very much resilient to noise and undesired conditions. We see ant colonies constructing ant hills and any damage to any part of the ant hill is easily reconstructed by the ants without any centralized coordination.
 > If traffic problems too could be solved without any centralized control, it could solve a lot of problems when self driving cars take on the streets.
+> We expect to see emergence of patterns and behaviors in the way cars manoeuvre and interact with each other to dissolve traffic congestion. Concepts of 'Self Organization' and 'Stigmergy' would be used to analyse the behavior. Traffic simulations would be done on Matlab.
 
 ###PROBLEMS TO TACKLE:
 * dissolving traffic congestions - Every car has an independent objective or destination that it has to go to, and when stuck in a jam, local interactions using fixed rules must lead to an overall emergent behaviour where the congestion slowly dissolves 
